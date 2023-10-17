@@ -3,36 +3,196 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_1">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/background_1"
-        android:scaleType="centerCrop"
-        android:importantForAccessibility="no"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/curtains"
-        android:scaleType="fitStart"
-        android:importantForAccessibility="no" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
+            android:id="@+id/bg_curtain"
+            android:layout_width="0dp"
+            android:layout_height="46.5dp"
             android:importantForAccessibility="no"
+            android:src="@drawable/curtains_2"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/btnbgrnd"
-            tools:layout_editor_absoluteX="16dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <ImageView
+            android:id="@+id/bg_card_1.1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="0dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/bg_card_1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toTopOf="@id/guideline5" />
+
+        <ImageView
+            android:id="@+id/logo_pb_login"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginTop="0dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/logo_pb"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="@id/guideline5"
+            app:layout_constraintBottom_toTopOf="@id/bg_card_2.1"/>
+
+        <ImageView
+            android:id="@+id/bg_card_1.2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/bg_card_1"
+            app:layout_constraintBottom_toTopOf="@id/guideline6"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/bg_card_1.1" />
+
+        <ImageView
+            android:id="@+id/bg_card_2.1"
+            android:layout_width="200dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/bg_card_2"
+            app:layout_constraintBottom_toBottomOf="@id/bg_card_1.1"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/g_welcome"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_card_2.1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bg_card_2.1" />
+
+        <EditText
+            android:id="@+id/ed_user_login"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_21sdp"
+            android:background="@drawable/btn_white_background"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
+            android:hint="@string/g_ent_user"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="@id/bg_card_1.2"
+            tools:layout_editor_absoluteY="319dp"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/ed_password_login"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/btn_white_background"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
+            android:hint="@string/g_password"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/ed_user_login"
+            tools:layout_editor_absoluteY="0dp"
+            android:importantForAutofill="no" />
+
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/btn_login_fragment"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/btn_animated"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/g_log_in"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/ed_password_login"
+            android:layout_marginTop="15dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.88" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.91" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

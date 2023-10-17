@@ -11,5 +11,5 @@ data class User(
     var imagePath:String=""
 ):Parcelable{
 
-    constructor() : this("","","","")
+    constructor() : this("","","")
 }
