@@ -25,7 +25,7 @@
         <ImageView
             android:id="@+id/bg_card_1.1"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_120sdp"
+            android:layout_height="@dimen/_160sdp"
             android:layout_marginTop="0dp"
             android:importantForAccessibility="no"
             android:src="@drawable/bg_card_1"
@@ -36,14 +36,13 @@
         <ImageView
             android:id="@+id/logo_pb_login"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_70sdp"
-            android:layout_marginTop="0dp"
+            android:layout_height="0dp"
             android:importantForAccessibility="no"
             android:src="@drawable/logo_pb"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toTopOf="@id/guideline5"
-            app:layout_constraintBottom_toTopOf="@id/bg_card_2.1"/>
+            app:layout_constraintBottom_toTopOf="@id/bg_card_2.1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toTopOf="@id/guideline5" />
 
         <ImageView
             android:id="@+id/bg_card_1.2"
@@ -89,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginTop="@dimen/_21sdp"
-            android:background="@drawable/btn_white_background"
+            android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
             android:gravity="center"
             android:hint="@string/g_ent_user"
@@ -108,7 +107,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/btn_white_background"
+            android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
             android:gravity="center"
             android:hint="@string/g_password"
@@ -170,7 +169,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.09" />
+            app:layout_constraintGuide_percent="0.06" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5.5"
@@ -184,7 +183,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.91" />
+            app:layout_constraintGuide_percent="0.94" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline7"
