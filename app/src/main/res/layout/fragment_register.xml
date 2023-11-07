@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_1">
@@ -21,7 +22,7 @@
 
 
         <ImageView
-            android:id="@+id/bg_card_1.1"
+            android:id="@+id/iv_card_1.1"
             android:layout_width="0dp"
             android:layout_height="@dimen/_160sdp"
             android:layout_marginTop="0dp"
@@ -37,13 +38,13 @@
             android:layout_height="0dp"
             android:importantForAccessibility="no"
             android:src="@drawable/logo_pb"
-            app:layout_constraintBottom_toTopOf="@id/bg_card_2.1"
+            app:layout_constraintBottom_toTopOf="@id/iv_card_2.1"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintStart_toStartOf="@id/guideline3"
             app:layout_constraintTop_toTopOf="@id/guideline5" />
 
         <ImageView
-            android:id="@+id/bg_card_1.2"
+            android:id="@+id/iv_card_1.2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
@@ -52,16 +53,16 @@
             app:layout_constraintBottom_toTopOf="@id/guideline6"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@id/bg_card_1.1" />
+            app:layout_constraintTop_toBottomOf="@id/iv_card_1.1" />
 
         <ImageView
-            android:id="@+id/bg_card_2.1"
+            android:id="@+id/iv_card_2.1"
             android:layout_width="200dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_5sdp"
             android:importantForAccessibility="no"
             android:src="@drawable/bg_card_2"
-            app:layout_constraintBottom_toBottomOf="@id/bg_card_1.1"
+            app:layout_constraintBottom_toBottomOf="@id/iv_card_1.1"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -72,14 +73,172 @@
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/_5sdp"
             android:fontFamily="@font/helvetica"
-            android:text="@string/g_welcome"
+            android:text="@string/g_register"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/bg_card_2.1"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_2.1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/bg_card_2.1" />
+            app:layout_constraintTop_toTopOf="@id/iv_card_2.1" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/g_username"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="@id/iv_card_1.2" />
+
+        <EditText
+            android:id="@+id/ed_username_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/txt_box_white"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/tv_username"
+            tools:layout_editor_absoluteY="319dp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/tv_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/g_contact"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/ed_username_register" />
+
+        <EditText
+            android:id="@+id/ed_contact_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/txt_box_white"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/tv_contact"
+            tools:layout_editor_absoluteY="319dp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/g_email"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/ed_contact_register" />
+
+        <EditText
+            android:id="@+id/ed_email_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/txt_box_white"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/tv_email"
+            tools:layout_editor_absoluteY="319dp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/tv_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/g_password"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/ed_email_register" />
+
+        <EditText
+            android:id="@+id/ed_password_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/txt_box_white"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/tv_password"
+            tools:layout_editor_absoluteY="319dp"
+            android:importantForAutofill="no" />
+
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/btn_register_fragment"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_animated"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/g_log_in"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/ed_password_register" />
+
+        <TextView
+            android:id="@+id/tv_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/g_do_you_have_an_account_log_in"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_register_fragment" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"

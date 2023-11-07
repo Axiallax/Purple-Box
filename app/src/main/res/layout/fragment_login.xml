@@ -23,7 +23,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/bg_card_1.1"
+            android:id="@+id/iv_card_1.1"
             android:layout_width="0dp"
             android:layout_height="@dimen/_160sdp"
             android:layout_marginTop="0dp"
@@ -39,13 +39,13 @@
             android:layout_height="0dp"
             android:importantForAccessibility="no"
             android:src="@drawable/logo_pb"
-            app:layout_constraintBottom_toTopOf="@id/bg_card_2.1"
+            app:layout_constraintBottom_toTopOf="@id/iv_card_2.1"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintStart_toStartOf="@id/guideline3"
             app:layout_constraintTop_toTopOf="@id/guideline5" />
 
         <ImageView
-            android:id="@+id/bg_card_1.2"
+            android:id="@+id/iv_card_1.2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
@@ -54,16 +54,16 @@
             app:layout_constraintBottom_toTopOf="@id/guideline6"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@id/bg_card_1.1" />
+            app:layout_constraintTop_toBottomOf="@id/iv_card_1.1" />
 
         <ImageView
-            android:id="@+id/bg_card_2.1"
+            android:id="@+id/iv_card_2.1"
             android:layout_width="200dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_5sdp"
             android:importantForAccessibility="no"
             android:src="@drawable/bg_card_2"
-            app:layout_constraintBottom_toBottomOf="@id/bg_card_1.1"
+            app:layout_constraintBottom_toBottomOf="@id/iv_card_1.1"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -78,10 +78,10 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/bg_card_2.1"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_2.1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/bg_card_2.1" />
+            app:layout_constraintTop_toTopOf="@id/iv_card_2.1" />
 
         <EditText
             android:id="@+id/ed_user_login"
@@ -91,14 +91,14 @@
             android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
             android:gravity="center"
-            android:hint="@string/g_ent_user"
+            android:hint="@string/g_ent_username"
             android:singleLine="true"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
 
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toTopOf="@id/bg_card_1.2"
+            app:layout_constraintTop_toTopOf="@id/iv_card_1.2"
             tools:layout_editor_absoluteY="319dp"
             android:importantForAutofill="no" />
 
@@ -121,6 +121,35 @@
             tools:layout_editor_absoluteY="0dp"
             android:importantForAutofill="no" />
 
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
+            android:text="@string/g_forgot_password"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/ed_password_login"
+            app:layout_constraintTop_toBottomOf="@+id/ed_password_login"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_dont_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
+            android:text="@string/g_don_t_have_an_account_register"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btn_login_fragment"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
+
         <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btn_login_fragment"
             android:layout_width="0dp"
@@ -131,10 +160,10 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline1"
-            app:layout_constraintTop_toBottomOf="@+id/ed_password_login"
-            android:layout_marginTop="15dp"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline5.5" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
