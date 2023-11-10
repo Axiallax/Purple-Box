@@ -20,6 +20,8 @@ class PurpleboxViewModel(
     val login = MutableLiveData<Boolean>()
     val loginError = MutableLiveData<String>()
 
+    val resetPassword = MutableLiveData<Resource<String>>()
+
     /*val resetPassword = MutableLiveData<Resource<String>>()*/
 
     fun registerNewUser(

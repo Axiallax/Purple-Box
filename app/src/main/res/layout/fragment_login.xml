@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_1">
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -53,8 +51,10 @@
             android:src="@drawable/bg_card_1"
             app:layout_constraintBottom_toTopOf="@id/guideline6"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@id/iv_card_1.1" />
+            app:layout_constraintTop_toBottomOf="@id/iv_card_1.1"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/iv_card_2.1"
@@ -84,14 +84,14 @@
             app:layout_constraintTop_toTopOf="@id/iv_card_2.1" />
 
         <EditText
-            android:id="@+id/ed_user_login"
+            android:id="@+id/ed_email_login"
             android:layout_width="0dp"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginTop="@dimen/_21sdp"
             android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
             android:gravity="center"
-            android:hint="@string/g_ent_username"
+            android:hint="@string/g_ent_email"
             android:singleLine="true"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -110,14 +110,14 @@
             android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
             android:gravity="center"
-            android:hint="@string/g_password"
+            android:hint="@string/g_ent_password"
             android:singleLine="true"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
 
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@id/ed_user_login"
+            app:layout_constraintTop_toBottomOf="@id/ed_email_login"
             tools:layout_editor_absoluteY="0dp"
             android:importantForAutofill="no" />
 
@@ -158,12 +158,13 @@
             android:fontFamily="@font/helvetica"
             android:text="@string/g_log_in"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline1"
-            app:layout_constraintTop_toTopOf="@+id/guideline5.5" />
+            app:layout_constraintTop_toTopOf="@+id/guideline5.5"
+            app:spinning_bar_color="#FFF" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"

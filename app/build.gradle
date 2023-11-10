@@ -49,7 +49,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.7.4'
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.4'
-    implementation 'com.google.firebase:firebase-auth:22.1.2'
     implementation 'androidx.core:core-ktx:+'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
@@ -66,13 +65,14 @@ dependencies {
     implementation 'com.github.leandroborgesferreira:loading-button-android:2.3.0'
 
     //firebase
-    implementation 'com.google.firebase:firebase-firestore:24.8.1'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.8.1'
-    implementation 'com.google.firebase:firebase-auth-ktx:22.1.2'
+    implementation 'com.google.firebase:firebase-auth:22.2.0'
+    implementation 'com.google.firebase:firebase-firestore:24.9.1'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.9.1'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.2.0'
     implementation "com.google.firebase:firebase-storage-common:17.0.0"
-    implementation 'com.google.firebase:firebase-storage-ktx:20.2.1'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.3.0'
     implementation 'com.google.firebase:firebase-common-ktx:20.4.2'
-    implementation 'com.google.firebase:firebase-messaging-ktx:23.2.1'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.3.1'
     implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
 
     //google play services

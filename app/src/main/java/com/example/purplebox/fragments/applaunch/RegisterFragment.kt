@@ -10,44 +10,46 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.purplebox.R
-import com.example.purplebox.activities.LoginRegisterActivity
+import com.example.purplebox.activities.FirstActivity
 import com.example.purplebox.databinding.FragmentRegisterBinding
 import com.example.purplebox.model.User
 import com.example.purplebox.resource.Resource
 import com.example.purplebox.viewmodel.launchapp.PurpleboxViewModel
 import com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
 
-private const val TAG = "RegisterFragment"
-class RegisterFragment: Fragment() {
+
+class RegisterFragment : Fragment() {
+    val TAG: String = "RegisterFragment"
 
     private lateinit var binding: FragmentRegisterBinding
+    private lateinit var btnRegister: CircularProgressButton
     private lateinit var viewModel: PurpleboxViewModel
-    lateinit var btnRegister: CircularProgressButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = (activity as LoginRegisterActivity).viewModel
+        viewModel = (activity as FirstActivity).viewModel
     }
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentRegisterBinding.inflate(layoutInflater)
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnRegister = view.findViewById(R.id.btn_login_fragment)
+        btnRegister = view.findViewById(R.id.btn_register_fragment)
 
         onRegisterBtnClick()
         observeSaveUserInformation()
-        onLoginClick()
+        onHaveAccountClick()
     }
 
-    private fun onLoginClick() {
+    private fun onHaveAccountClick() {
         binding.tvHaveAccount.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
@@ -55,13 +57,12 @@ class RegisterFragment: Fragment() {
 
     private fun onRegisterBtnClick() {
         btnRegister.setOnClickListener {
-            btnRegister.spinningBarColor = resources.getColor(R.color.white)
             btnRegister.spinningBarWidth = resources.getDimension(com.intuit.sdp.R.dimen._3sdp)
             val user = getUser()
             val password = getPassword()
-            user?.let { user ->
+            user?.let { username ->
                 password?.let { password ->
-                    viewModel.registerNewUser(user, password)
+                    viewModel.registerNewUser(username, password)
                     btnRegister.startAnimation()
                 }
             }

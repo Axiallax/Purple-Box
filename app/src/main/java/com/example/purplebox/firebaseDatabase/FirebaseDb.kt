@@ -33,7 +33,7 @@ class FirebaseDb {
     fun getUser() = usersCollectionRef
         .document(FirebaseAuth.getInstance().currentUser!!.uid)
 
-    fun checkUserByEmail(email: String, onResult: (String?, Boolean?) -> Unit) {
+    /*fun checkUserByEmail(email: String, onResult: (String?, Boolean?) -> Unit) {
         usersCollectionRef.whereEqualTo("email", email).get()
             .addOnCompleteListener {
                 if (it.isSuccessful) {
@@ -45,6 +45,6 @@ class FirebaseDb {
                 } else
                     onResult(it.exception.toString(), null)
             }
-    }
+    }*/
     fun logout() = Firebase.auth.signOut()
 }

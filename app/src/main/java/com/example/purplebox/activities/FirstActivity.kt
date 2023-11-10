@@ -1,6 +1,6 @@
 package com.example.purplebox.activities
 
-import android.os.Bundle
+import  android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.purplebox.R
@@ -8,7 +8,7 @@ import com.example.purplebox.firebaseDatabase.FirebaseDb
 import com.example.purplebox.viewmodel.launchapp.PurpleboxViewModel
 import com.example.purplebox.viewmodel.launchapp.ViewModelProviderFactory
 
-class LoginRegisterActivity : AppCompatActivity() {
+class FirstActivity : AppCompatActivity() {
     val viewModel by lazy {
         val firebaseDb = FirebaseDb()
         val viewModelFactory = ViewModelProviderFactory(firebaseDb)
@@ -16,7 +16,7 @@ class LoginRegisterActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_login)
+        setContentView(R.layout.activity_launch)
 
         supportActionBar?.hide()
     }

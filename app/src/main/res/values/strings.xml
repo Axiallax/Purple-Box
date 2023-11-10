@@ -11,7 +11,7 @@
     <string name="g_welcome">Welcome</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="all_your_orders">All your orders in one \n saved package</string>
-    <string name="g_ent_username">Enter Username</string>
+    <string name="g_ent_email">Enter Email</string>
     <string name="g_username">Username:</string>
     <string name="g_contact">Contact Number:</string>
     <string name="g_register">Register</string>

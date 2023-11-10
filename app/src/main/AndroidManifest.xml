@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.purplebox">
 
     <application
         android:allowBackup="true"
@@ -14,9 +15,10 @@
         tools:targetApi="31">
         <activity
             android:name=".activities.ShoppingActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
         <activity
-            android:name=".activities.LoginRegisterActivity"
+            android:name=".activities.FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

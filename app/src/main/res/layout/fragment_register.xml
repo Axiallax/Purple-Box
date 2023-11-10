@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/bg_curtain"
+            android:id="@+id/bg_curtain2"
             android:layout_width="0dp"
             android:layout_height="46.5dp"
             android:importantForAccessibility="no"
@@ -22,9 +22,9 @@
 
 
         <ImageView
-            android:id="@+id/iv_card_1.1"
+            android:id="@+id/iv_card_1.1_register"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_160sdp"
+            android:layout_height="@dimen/_100sdp"
             android:layout_marginTop="0dp"
             android:importantForAccessibility="no"
             android:src="@drawable/bg_card_1"
@@ -33,18 +33,18 @@
             app:layout_constraintTop_toTopOf="@id/guideline5" />
 
         <ImageView
-            android:id="@+id/logo_pb_login"
+            android:id="@+id/logo_pb_register"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:importantForAccessibility="no"
             android:src="@drawable/logo_pb"
-            app:layout_constraintBottom_toTopOf="@id/iv_card_2.1"
+            app:layout_constraintBottom_toTopOf="@id/iv_card_2.1_register"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintStart_toStartOf="@id/guideline3"
             app:layout_constraintTop_toTopOf="@id/guideline5" />
 
         <ImageView
-            android:id="@+id/iv_card_1.2"
+            android:id="@+id/iv_card_1.2_register"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
@@ -52,17 +52,19 @@
             android:src="@drawable/bg_card_1"
             app:layout_constraintBottom_toTopOf="@id/guideline6"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@id/iv_card_1.1" />
+            app:layout_constraintTop_toBottomOf="@id/iv_card_1.1_register"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/iv_card_2.1"
+            android:id="@+id/iv_card_2.1_register"
             android:layout_width="200dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_5sdp"
             android:importantForAccessibility="no"
             android:src="@drawable/bg_card_2"
-            app:layout_constraintBottom_toBottomOf="@id/iv_card_1.1"
+            app:layout_constraintBottom_toBottomOf="@id/iv_card_1.1_register"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -77,10 +79,10 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_card_2.1"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_2.1_register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/iv_card_2.1" />
+            app:layout_constraintTop_toTopOf="@id/iv_card_2.1_register" />
 
         <TextView
             android:id="@+id/tv_username"
@@ -94,25 +96,24 @@
             android:textSize="@dimen/_13sdp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toTopOf="@id/iv_card_1.2" />
+            app:layout_constraintTop_toTopOf="@id/iv_card_1.2_register" />
 
         <EditText
             android:id="@+id/ed_username_register"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
             android:gravity="center"
+            android:importantForAutofill="no"
             android:singleLine="true"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
 
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@id/tv_username"
-            tools:layout_editor_absoluteY="319dp"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@id/tv_username" />
 
         <TextView
             android:id="@+id/tv_contact"
@@ -131,7 +132,7 @@
         <EditText
             android:id="@+id/ed_contact_register"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="10dp"
             android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
@@ -144,7 +145,7 @@
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintTop_toBottomOf="@id/tv_contact"
             tools:layout_editor_absoluteY="319dp"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="yes" />
 
         <TextView
             android:id="@+id/tv_email"
@@ -163,7 +164,7 @@
         <EditText
             android:id="@+id/ed_email_register"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="10dp"
             android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
@@ -195,7 +196,7 @@
         <EditText
             android:id="@+id/ed_password_register"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="10dp"
             android:background="@drawable/txt_box_white"
             android:fontFamily="@font/helvetica"
@@ -217,9 +218,9 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/btn_animated"
             android:fontFamily="@font/helvetica"
-            android:text="@string/g_log_in"
+            android:text="@string/g_register"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline1"
