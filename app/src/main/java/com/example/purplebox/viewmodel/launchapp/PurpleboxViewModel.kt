@@ -39,6 +39,7 @@ class PurpleboxViewModel(
                             register.postValue(Resource.Error(it2.exception.toString()))
 
                     }
+
             else
                 register.postValue(Resource.Error(it.exception.toString()))
         }
