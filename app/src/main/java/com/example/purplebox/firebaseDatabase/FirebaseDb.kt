@@ -4,6 +4,7 @@ import com.example.purplebox.model.User
 import com.example.purplebox.util.Constants.Companion.USERS_COLLECTION
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -13,6 +14,7 @@ class FirebaseDb {
     private val firebaseStorage = Firebase.storage.reference
 
     val userUid = FirebaseAuth.getInstance().currentUser?.uid
+    val fStore = FirebaseFirestore.getInstance()
 
     private val firebaseAuth = Firebase.auth
 

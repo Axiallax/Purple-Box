@@ -111,7 +111,7 @@ class RegisterFragment : Fragment() {
 
         if (userName.isEmpty()) {
             binding.edUsernameRegister.apply {
-                error = resources.getString(R.string.first_name_cant_be_empty)
+                error = resources.getString(R.string.user_name_cant_be_empty)
                 requestFocus()
             }
             return null
@@ -119,7 +119,7 @@ class RegisterFragment : Fragment() {
 
         if (contactNumber.isEmpty()) {
             binding.edContactRegister.apply {
-                error = resources.getString(R.string.last_name_cant_be_empty)
+                error = resources.getString(R.string.contact_cant_be_empty)
                 requestFocus()
             }
             return null
