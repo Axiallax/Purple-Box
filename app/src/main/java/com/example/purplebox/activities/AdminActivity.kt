@@ -20,4 +20,5 @@ class AdminActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
     }
+
 }
