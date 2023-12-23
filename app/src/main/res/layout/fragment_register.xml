@@ -224,6 +224,7 @@
             app:layout_constraintTop_toBottomOf="@+id/ed_password_register" />
 
         <TextView
+            android:id="@+id/tvHaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"

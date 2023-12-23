@@ -3,7 +3,7 @@ package com.example.purplebox.viewmodel.launchapp
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.purplebox.firebaseDatabase.FirebaseDb
-import com.example.purplebox.model.User
+import com.example.purplebox.util.model.User
 import com.example.purplebox.resource.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

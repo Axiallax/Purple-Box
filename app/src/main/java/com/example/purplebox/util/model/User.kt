@@ -1,4 +1,4 @@
-package com.example.purplebox.model
+package com.example.purplebox.util.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
