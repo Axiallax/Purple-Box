@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".fragments.shopping.ProfileFragment"
+    tools:context=".fragments.admin.AdminSettingsFragment"
     android:background="#F4F4F4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -420,21 +420,21 @@
 
             </LinearLayout>
 
-<!--
-            <TextView
-                android:id="@+id/tv_version_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/sf_pro_display"
-                android:text="Version 1.0"
-                android:textColor="@color/g_hint"
-                android:textSize="@dimen/_10ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/linear_regional" />
--->
+            <!--
+                        <TextView
+                            android:id="@+id/tv_version_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:text="Version 1.0"
+                            android:textColor="@color/g_hint"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/guideline2"
+                            app:layout_constraintStart_toStartOf="@id/guideline1"
+                            app:layout_constraintTop_toBottomOf="@+id/linear_regional" />
+            -->
 
 
             <androidx.constraintlayout.widget.Guideline
@@ -455,6 +455,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.core.widget.NestedScrollView>

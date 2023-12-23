@@ -5,19 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.coordinatorlayout.widget.CoordinatorLayout
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.purplebox.R
 import com.example.purplebox.activities.ShoppingActivity
-//import com.example.purplebox.adapters.viewpager.HomeViewpagerAdapter
 import com.example.purplebox.databinding.FragmentHomeBinding
-import com.example.purplebox.fragments.categories.*
-//import com.example.purplebox.fragments.categories.HomeProductsFragment
 import com.example.purplebox.viewmodel.shopping.ShoppingViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {
     val TAG = "HomeFragment"

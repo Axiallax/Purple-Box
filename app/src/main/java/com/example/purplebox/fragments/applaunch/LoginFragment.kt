@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.purplebox.R
+import com.example.purplebox.activities.AdminActivity
 import com.example.purplebox.activities.FirstActivity
 import com.example.purplebox.activities.ShoppingActivity
 import com.example.purplebox.databinding.FragmentLoginBinding
@@ -145,7 +146,7 @@ class LoginFragment : Fragment() {
         viewModel.login.observe(viewLifecycleOwner, Observer {
             if (it == true) {
                 btnLogin.revertAnimation()
-                val intent = Intent(activity, ShoppingActivity::class.java)
+                val intent = Intent(activity, AdminActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }

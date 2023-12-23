@@ -9,6 +9,6 @@ class AdminViewModelProviderFactory(
     val adb: FirebaseDb
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return ShoppingViewModel(adb) as T
+        return AdminViewModel(adb) as T
     }
 }

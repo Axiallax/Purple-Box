@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.purplebox.R
+import com.example.purplebox.activities.AdminActivity
 import com.example.purplebox.activities.FirstActivity
 import com.example.purplebox.activities.ShoppingActivity
 import com.example.purplebox.databinding.FragmentSplashScreenBinding
@@ -32,7 +33,7 @@ class SplashScreen : Fragment() {
         val viewModel = (activity as FirstActivity).viewModel
         val isUserSignedIn = viewModel.isUserSignedIn()
         if (isUserSignedIn) {
-            val intent = Intent(requireActivity(), ShoppingActivity::class.java)
+            val intent = Intent(requireActivity(), AdminActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             Handler().postDelayed({
                 startActivity(intent)
