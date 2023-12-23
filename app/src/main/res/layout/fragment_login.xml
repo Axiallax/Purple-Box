@@ -11,7 +11,6 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/bg_curtain"
             android:layout_width="0dp"
             android:layout_height="46.5dp"
             android:importantForAccessibility="no"
@@ -32,7 +31,6 @@
             app:layout_constraintTop_toTopOf="@id/guideline5" />
 
         <ImageView
-            android:id="@+id/logo_pb_login"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:importantForAccessibility="no"
@@ -69,7 +67,6 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/tv_app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/_5sdp"
@@ -136,7 +133,6 @@
             android:layout_marginTop="5dp"/>
 
         <TextView
-            android:id="@+id/tv_dont_have_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/helvetica"
@@ -216,7 +212,6 @@
             app:layout_constraintGuide_percent="0.94" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

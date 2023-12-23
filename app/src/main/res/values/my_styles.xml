@@ -22,21 +22,4 @@
     </style>
 
 
-    <style name="EditTextSettings">
-        <item name="android:width">0dp</item>
-        <item name="height">@dimen/_45sdp</item>
-        <item name="fontFamily">@font/helvetica</item>
-        <item name="background">@drawable/txt_box_white</item>
-        <item name="android:gravity">start</item>
-        <item name="android:textStyle">bold</item>
-        <item name="singleLine">true</item>
-        <item name="paddingStart">@dimen/_10sdp</item>
-    </style>
-
-    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="android:windowIsFloating">false</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowSoftInputMode">adjustResize</item>
-    </style>
-
 </resources>

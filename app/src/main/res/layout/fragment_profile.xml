@@ -15,7 +15,6 @@
         android:layout_height="match_parent">
 
         <ProgressBar
-            android:id="@+id/progressbar_settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +25,6 @@
             android:visibility="gone"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_parnet"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -82,7 +80,6 @@
                     app:layout_constraintStart_toStartOf="@+id/tv_user_name" />
 
                 <ImageView
-                    android:id="@+id/arrow"
                     android:layout_width="@dimen/_15sdp"
                     android:layout_height="@dimen/_15sdp"
                     android:src="@drawable/ic_arrow"
@@ -109,7 +106,6 @@
 
 
             <LinearLayout
-                android:id="@+id/linear_orders"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
@@ -405,7 +401,6 @@
                         />
 
                     <TextView
-                        android:id="@+id/logout"
                         style="@style/MediumTextViewThin"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

@@ -14,9 +14,12 @@
         android:theme="@style/Theme.PurpleBox"
         tools:targetApi="31">
         <activity
+            android:name=".activities.AdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ShoppingActivity"
             android:exported="true"
-            android:windowSoftInputMode="stateVisible|adjustPan"/>
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".activities.FirstActivity"
             android:exported="true">
