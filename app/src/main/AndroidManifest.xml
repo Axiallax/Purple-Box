@@ -14,10 +14,6 @@
         android:theme="@style/Theme.PurpleBox"
         tools:targetApi="31">
         <activity
-            android:name=".activities.ShoppingActivity"
-            android:exported="true"
-            android:windowSoftInputMode="stateVisible|adjustPan"/>
-        <activity
             android:name=".activities.FirstActivity"
             android:exported="true">
             <intent-filter>
@@ -26,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.ShoppingActivity"
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
+        <activity
+            android:name=".activities.AdminActivity"
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
     </application>
 
 </manifest>

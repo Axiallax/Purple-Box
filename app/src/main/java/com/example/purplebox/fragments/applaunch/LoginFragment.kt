@@ -138,8 +138,6 @@ class LoginFragment : Fragment() {
             btnLogin.revertAnimation()
 
         })
-
-
     }
 
     private fun observerLogin() {
