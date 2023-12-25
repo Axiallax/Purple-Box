@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.purplebox.R
 import com.example.purplebox.activities.FirstActivity
 import com.example.purplebox.databinding.FragmentRegisterBinding
-import com.example.purplebox.util.model.User
+import com.example.purplebox.model.User
 import com.example.purplebox.resource.Resource
 import com.example.purplebox.viewmodel.launchapp.PurpleboxViewModel
 import com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
