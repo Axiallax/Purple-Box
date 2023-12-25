@@ -1,6 +1,6 @@
 package com.example.purplebox.firebaseDatabase
 
-import com.example.purplebox.util.model.User
+import com.example.purplebox.model.User
 import com.example.purplebox.util.Constants.Companion.USERS_COLLECTION
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -48,5 +48,6 @@ class FirebaseDb {
                     onResult(it.exception.toString(), null)
             }
     }*/
+
     fun logout() = Firebase.auth.signOut()
 }

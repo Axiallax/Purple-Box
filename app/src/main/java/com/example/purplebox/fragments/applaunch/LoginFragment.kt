@@ -23,6 +23,7 @@ import com.example.purplebox.viewmodel.launchapp.PurpleboxViewModel
 import com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.delay
 
 
 class LoginFragment : Fragment() {
@@ -53,6 +54,7 @@ class LoginFragment : Fragment() {
         onLoginClick()
         observerLogin()
         observerLoginError()
+        observerAdmin()
         onDontHaveAccountClick()
         //onForgotPasswordClick()
         //observeResetPassword()
@@ -143,12 +145,27 @@ class LoginFragment : Fragment() {
     private fun observerLogin() {
         viewModel.login.observe(viewLifecycleOwner, Observer {
             if (it == true) {
+                viewModel.checkUserLevelAccess()
+            }
+        })
+    }
+
+    private fun observerAdmin() {
+        viewModel.admin.observe(viewLifecycleOwner, Observer {
+            if (it == true) {
                 btnLogin.revertAnimation()
                 val intent = Intent(activity, AdminActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }
+            else {
+                btnLogin.revertAnimation()
+                val intent = Intent(activity, ShoppingActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }
         })
+
     }
 
 

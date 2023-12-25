@@ -1,9 +1,10 @@
 package com.example.purplebox.viewmodel.launchapp
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.purplebox.firebaseDatabase.FirebaseDb
-import com.example.purplebox.util.model.User
+import com.example.purplebox.model.User
 import com.example.purplebox.resource.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -15,6 +16,8 @@ class PurpleboxViewModel(
 
 
     val register = MutableLiveData<Resource<User>>()
+
+    val admin = MutableLiveData<Boolean>()
 
 
     val login = MutableLiveData<Boolean>()
@@ -49,8 +52,10 @@ class PurpleboxViewModel(
         email: String,
         password: String
     ) = firebaseDatabase.loginUser(email, password).addOnCompleteListener {
-        if (it.isSuccessful)
+        if (it.isSuccessful) {
+            checkUserLevelAccess()
             login.postValue(true)
+        }
         else
             loginError.postValue(it.exception.toString())
     }
@@ -66,7 +71,16 @@ class PurpleboxViewModel(
         }
     }*/
 
-    fun logOut(){
+    fun checkUserLevelAccess() {
+        firebaseDatabase.getUser().get().addOnSuccessListener{
+            if (it.getString("admin") != null)
+                admin.postValue(true)
+            else
+                admin.postValue(false)
+        }
+    }
+
+    fun logOut() {
         firebaseDatabase.logout()
     }
 
