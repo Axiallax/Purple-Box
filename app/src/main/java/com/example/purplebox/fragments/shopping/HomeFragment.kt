@@ -79,7 +79,6 @@ class HomeFragment : Fragment() {
 
     }*/
 
-
     override fun onResume() {
         super.onResume()
         val bottomNavigation =
@@ -89,7 +88,6 @@ class HomeFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-
     }
 
 }

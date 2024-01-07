@@ -52,7 +52,6 @@ class LoginFragment : Fragment() {
         btnLogin = view.findViewById(R.id.btn_login_fragment)
 
         onLoginClick()
-        observerLogin()
         observerLoginError()
         observerAdmin()
         onDontHaveAccountClick()
@@ -138,17 +137,6 @@ class LoginFragment : Fragment() {
             Log.e(TAG, error)
             Toast.makeText(activity, "Please check your information", Toast.LENGTH_LONG).show()
             btnLogin.revertAnimation()
-
-        })
-
-
-    }
-
-    private fun observerLogin() {
-        viewModel.login.observe(viewLifecycleOwner, Observer {
-            if (it == true) {
-                viewModel.checkUserLevelAccess()
-            }
         })
     }
 
@@ -167,9 +155,7 @@ class LoginFragment : Fragment() {
                 startActivity(intent)
             }
         })
-
     }
-
 
     private fun onLoginClick() {
         btnLogin.setOnClickListener {
@@ -185,6 +171,7 @@ class LoginFragment : Fragment() {
             }
         }
     }
+
     private fun getPassword(): String? {
         val password = binding.edPasswordLogin.text.toString()
 
@@ -216,8 +203,6 @@ class LoginFragment : Fragment() {
             }
             return null
         }
-
-
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             binding.edEmailLogin.apply {
                 error = resources.getString(R.string.valid_email)
@@ -225,9 +210,7 @@ class LoginFragment : Fragment() {
             }
             return null
         }
-
-
         return email
-
     }
+
 }

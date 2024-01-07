@@ -18,9 +18,6 @@ class PurpleboxViewModel(
     val register = MutableLiveData<Resource<User>>()
 
     val admin = MutableLiveData<Boolean>()
-
-
-    val login = MutableLiveData<Boolean>()
     val loginError = MutableLiveData<String>()
 
     val resetPassword = MutableLiveData<Resource<String>>()
@@ -38,9 +35,9 @@ class PurpleboxViewModel(
                     .addOnCompleteListener { it2 ->
                         if (it2.isSuccessful) {
                             register.postValue(Resource.Success(user))
-                        } else
+                        }
+                        else
                             register.postValue(Resource.Error(it2.exception.toString()))
-
                     }
             else
                 register.postValue(Resource.Error(it.exception.toString()))
@@ -53,7 +50,6 @@ class PurpleboxViewModel(
     ) = firebaseDatabase.loginUser(email, password).addOnCompleteListener {
         if (it.isSuccessful) {
             checkUserLevelAccess()
-            login.postValue(true)
         }
         else
             loginError.postValue(it.exception.toString())
@@ -87,6 +83,6 @@ class PurpleboxViewModel(
         if (FirebaseAuth.getInstance().currentUser?.uid != null)
             return true
         return false
-
     }
+
 }

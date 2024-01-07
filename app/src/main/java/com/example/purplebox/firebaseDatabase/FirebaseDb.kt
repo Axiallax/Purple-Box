@@ -49,4 +49,5 @@ class FirebaseDb {
     }*/
 
     fun logout() = Firebase.auth.signOut()
+
 }

@@ -30,8 +30,6 @@
         android:textDirection="anyRtl"
         app:drawableEndCompat="@drawable/ic_search" />
 
-
-
     <androidx.viewpager2.widget.ViewPager2
         android:layout_width="0dp"
         android:layout_height="0dp"

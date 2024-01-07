@@ -31,7 +31,6 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
@@ -44,7 +43,6 @@ class ProfileFragment : Fragment() {
     }
 
     private fun onLogoutClick() {
-
         binding.linearOut.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(context, FirstActivity::class.java)
