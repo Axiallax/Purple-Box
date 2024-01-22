@@ -1,16 +1,17 @@
 package com.example.purplebox.firebaseDatabase
 
 import com.example.purplebox.model.User
+import com.example.purplebox.util.Constants.Companion.PRODUCTS_COLLECTION
 import com.example.purplebox.util.Constants.Companion.USERS_COLLECTION
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 
 class FirebaseDb {
     private val usersCollectionRef = Firebase.firestore.collection(USERS_COLLECTION)
+    private val productsCollectionRef = Firebase.firestore.collection(PRODUCTS_COLLECTION)
     private val firebaseStorage = Firebase.storage.reference
 
     val userUid = FirebaseAuth.getInstance().currentUser?.uid
@@ -33,6 +34,8 @@ class FirebaseDb {
 
     fun getUser() = usersCollectionRef
         .document(FirebaseAuth.getInstance().currentUser!!.uid)
+
+    /*fun productRef(product: String) = productsCollectionRef*/
 
     /*fun checkUserByEmail(email: String, onResult: (String?, Boolean?) -> Unit) {
         usersCollectionRef.whereEqualTo("email", email).get()

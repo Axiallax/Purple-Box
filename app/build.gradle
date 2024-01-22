@@ -82,6 +82,9 @@ dependencies {
     //smooth bar
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
+    //Color picker
+    implementation "com.github.skydoves:colorpickerview:2.2.4"
+
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.16.0'
 

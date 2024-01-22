@@ -16,12 +16,13 @@ import com.google.firebase.auth.FirebaseAuth
 
 class AdminSettingsFragment : Fragment() {
     val TAG = "AdminSettingsFragment"
-    private lateinit var binding: FragmentAdminSettingsBinding
     private lateinit var viewModel: AdminViewModel
+    private lateinit var binding: FragmentAdminSettingsBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
 
         viewModel = (activity as AdminActivity).viewModel
 //        viewModel.getUser()
