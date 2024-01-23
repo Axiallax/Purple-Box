@@ -8,6 +8,7 @@
     android:fillViewport="true">
 
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:backgroundTint="@color/purple"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
@@ -34,7 +35,7 @@
             />
 
         <ImageView
-            android:id="@+id/imclose"
+            android:id="@+id/imgClose"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_marginStart="10dp"
@@ -76,11 +77,11 @@
 
         <TextView
             android:id="@+id/tv_product_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/helvetica"
-            android:text="Premium chair"
+            android:text="Cake Name"
             android:textColor="@color/black"
             android:textSize="@dimen/_20ssp"
             android:textStyle="bold"
@@ -152,10 +153,11 @@
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@id/line"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:baselineAligned="false">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -169,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/helvetica"
-                android:text="@string/size"
+                android:text="@string/g_size"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_15ssp" />
 
@@ -225,10 +227,10 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/btn_background"
         android:fontFamily="@font/helvetica"
-        android:text="@string/g_add_to_card"
+        android:text="@string/g_add_to_cart"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="@dimen/_12sdp"
+        android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"

@@ -4,11 +4,11 @@ import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,7 +24,6 @@ import com.example.purplebox.resource.Resource
 import com.example.purplebox.util.Constants.Companion.COLORS
 import com.example.purplebox.util.Constants.Companion.COLORS_TYPE
 import com.example.purplebox.util.Constants.Companion.IMAGES
-import com.example.purplebox.util.Constants.Companion.PRODUCT_FLAG
 import com.example.purplebox.util.Constants.Companion.SIZES
 import com.example.purplebox.util.Constants.Companion.SIZES_TYPE
 import com.example.purplebox.viewmodel.shopping.ShoppingViewModel
@@ -53,7 +52,7 @@ class ProductPreviewFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentProductPreviewBinding.inflate(inflater)
         return binding.root
@@ -69,7 +68,6 @@ class ProductPreviewFragment : Fragment() {
         val product = args.product
 
         setupViewpager()
-        setupColorsRecyclerview()
         setupSizesRecyclerview()
 
 
@@ -80,7 +78,6 @@ class ProductPreviewFragment : Fragment() {
 
         observeAddToCart()
 
-        onColorClick()
         onSizeClick()
     }
 
@@ -89,18 +86,8 @@ class ProductPreviewFragment : Fragment() {
         sizesAdapter.onItemClick = { size ->
             selectedSize = size
             binding.tvSizeError.visibility = View.INVISIBLE
-
         }
     }
-
-    private var selectedColor: String = ""
-    private fun onColorClick() {
-        colorsAdapter.onItemClick = { color ->
-            selectedColor = color
-            binding.tvColorError.visibility = View.INVISIBLE
-        }
-    }
-
 
     private fun observeAddToCart() {
         viewModel.addToCart.observe(viewLifecycleOwner, Observer { response ->
@@ -110,13 +97,11 @@ class ProductPreviewFragment : Fragment() {
                     startLoading()
                     return@Observer
                 }
-
                 is Resource.Success -> {
                     stopLoading()
                     viewModel.addToCart.value = null
                     return@Observer
                 }
-
                 is Resource.Error -> {
                     Toast.makeText(activity, "Oops! error occurred", Toast.LENGTH_SHORT).show()
                     viewModel.addToCart.value = null
@@ -144,32 +129,23 @@ class ProductPreviewFragment : Fragment() {
     private fun onBtnAddToCartClick() {
         binding.btnAddToCart.apply {
             setOnClickListener {
-
-                if (selectedColor.isEmpty()) {
-                    binding.tvColorError.visibility = View.VISIBLE
-                    return@setOnClickListener
-                }
-
                 if (selectedSize.isEmpty()) {
                     binding.tvSizeError.visibility = View.VISIBLE
                     return@setOnClickListener
                 }
-
                 val product = args.product
                 val image = (product.images?.get(IMAGES) as List<String>)[0]
                 val cartProduct = CartProduct(
                     product.id,
                     product.title!!,
-                    product.seller!!,
                     image,
                     product.price!!,
                     product.newPrice,
                     1,
-                    selectedColor,
                     selectedSize
                 )
                 viewModel.addProductToCart(cartProduct)
-                setBackgroundResource(R.color.g_black)
+                setBackgroundResource(R.color.black)
             }
         }
     }
@@ -220,13 +196,13 @@ class ProductPreviewFragment : Fragment() {
         }
     }
 
-    private fun setupColorsRecyclerview() {
+/*    private fun setupColorsRecyclerview() {
         binding.rvColors.apply {
             adapter = colorsAdapter
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             addItemDecoration(HorizantalSpacingItemDecorator(45))
         }
-    }
+    }*/
 
     private fun setupViewpager() {
         binding.viewpager2Images.adapter = viewPagerAdapter

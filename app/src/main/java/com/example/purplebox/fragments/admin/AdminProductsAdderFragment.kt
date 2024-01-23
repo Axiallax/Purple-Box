@@ -25,9 +25,10 @@ import com.google.firebase.storage.ktx.storage
 import com.skydoves.colorpickerview.ColorEnvelope
 import com.skydoves.colorpickerview.ColorPickerDialog
 import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener
-import kotlinx.coroutines.async
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
 import java.util.UUID
 
@@ -70,7 +71,7 @@ class AdminProductsAdderFragment : Fragment() {
                     //Multiple images selected
                     if (intent?.clipData != null) {
                         val count = intent.clipData?.itemCount ?: 0
-                        (0 until count).forEach {
+                        (0 until count).forEach { it ->
                             val imagesUri = intent.clipData?.getItemAt(it)?.uri
                             imagesUri?.let { viewModel.selectedImages.add(it) }
                         }
@@ -117,7 +118,7 @@ class AdminProductsAdderFragment : Fragment() {
             if (!productValidation) {
                 Toast.makeText(activity, "Check your inputs", Toast.LENGTH_SHORT).show()
             }
-            saveProducts() {
+            saveProducts {
                 Log.d("test", it.toString())
             }
         }
@@ -150,7 +151,7 @@ class AdminProductsAdderFragment : Fragment() {
         lifecycleScope.launch {
             showLoading()
             try {
-                async {
+                withContext(Dispatchers.Default) {
                     Log.d("test1", "test")
                     imagesByteArrays.forEach {
                         val id = UUID.randomUUID().toString()
@@ -161,7 +162,7 @@ class AdminProductsAdderFragment : Fragment() {
                             images.add(downloadUrl)
                         }
                     }
-                }.await()
+                }
             } catch (e: java.lang.Exception) {
                 hideLoading()
                 state(false)
@@ -175,7 +176,7 @@ class AdminProductsAdderFragment : Fragment() {
                 category,
                 price.toFloat(),
                 if (offerPercentage.isEmpty()) null else offerPercentage.toFloat(),
-                if (productDescription.isEmpty()) null else productDescription,
+                productDescription.ifEmpty { null },
                 viewModel.selectedColors,
                 sizes,
                 images
@@ -220,8 +221,7 @@ class AdminProductsAdderFragment : Fragment() {
     private fun getSizesList(sizes: String): List<String>? {
         if (sizes.isEmpty())
             return null
-        val sizesList = sizes.split(",").map { it.trim() }
-        return sizesList
+        return sizes.split(",").map { it.trim() }
     }
 
     //5
@@ -235,7 +235,7 @@ class AdminProductsAdderFragment : Fragment() {
 
 
     private fun updateImages() {
-        binding.tvSelectedImages.setText(viewModel.selectedImages.size.toString())
+        binding.tvSelectedImages.text = viewModel.selectedImages.size.toString()
     }
 
 

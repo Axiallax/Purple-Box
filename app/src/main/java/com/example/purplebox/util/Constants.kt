@@ -17,7 +17,7 @@ class Constants {
         const val CATEGORY = "category"
         const val ID = "id"
         const val TITLE = "title"
-        const val COLOR = "color"
+        const val FLAVOUR = "flavour"
         const val SIZE = "size"
         const val QUANTITY = "quantity"
 

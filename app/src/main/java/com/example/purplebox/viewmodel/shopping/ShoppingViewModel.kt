@@ -1,14 +1,20 @@
 package com.example.purplebox.viewmodel.shopping
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.purplebox.resource.Resource
 import com.example.purplebox.firebaseDatabase.FirebaseDb
+import com.example.purplebox.model.CartProduct
+import com.example.purplebox.model.Category
+import com.example.purplebox.model.Product
+import com.example.purplebox.model.User
+import com.example.purplebox.resource.Resource
+import com.google.firebase.firestore.FirebaseFirestore
 
+private const val TAG = "ShoppingViewModel"
 class ShoppingViewModel(
     private val firebaseDatabase: FirebaseDb
 ) : ViewModel() {
-/*
     val clothes = MutableLiveData<List<Product>>()
     val emptyClothes = MutableLiveData<Boolean>()
     val bestDeals = MutableLiveData<List<Product>>()
@@ -32,20 +38,20 @@ class ShoppingViewModel(
     val cupboard = MutableLiveData<Resource<List<Product>>>()
     val addToCart = MutableLiveData<Resource<Boolean>>()
 
-    val addAddress = MutableLiveData<Resource<Address>>()
+/*    val addAddress = MutableLiveData<Resource<Address>>()
     val updateAddress = MutableLiveData<Resource<Address>>()
-    val deleteAddress = MutableLiveData<Resource<Address>>()
+    val deleteAddress = MutableLiveData<Resource<Address>>()*/
 
     val profile = MutableLiveData<Resource<User>>()
 
     val uploadProfileImage = MutableLiveData<Resource<String>>()
     val updateUserInformation = MutableLiveData<Resource<User>>()
 
-    val userOrders = MutableLiveData<Resource<List<Order>>>()
+//    val userOrders = MutableLiveData<Resource<List<Order>>>()
 
     val passwordReset = MutableLiveData<Resource<String>>()
 
-    val orderAddress = MutableLiveData<Resource<Address>>()
+//    val orderAddress = MutableLiveData<Resource<Address>>()
     val orderProducts = MutableLiveData<Resource<List<CartProduct>>>()
 
     val categories = MutableLiveData<Resource<List<Category>>>()
@@ -74,13 +80,13 @@ class ShoppingViewModel(
 
 
     init {
-        getClothesProducts()
+//        getClothesProducts()
         getBestDealsProduct()
         getHomeProduct()
     }
 
     private var furnitureProducts: List<Product>? = null
-    fun getFurniture(size: Int = 0) {
+    /*fun getFurniture(size: Int = 0) {
         if (furnitureProducts != null && size == 0) {
             furniture.postValue(Resource.Success(furnitureProducts))
             return
@@ -107,10 +113,10 @@ class ShoppingViewModel(
                 furniture.postValue(Resource.Error("Cannot paging"))
 
         }
-    }
+    }*/
 
     private var mostRequestedFurnitureProducts: List<Product>? = null
-    fun getMostRequestedFurniture(size: Int = 0) {
+    /*fun getMostRequestedFurniture(size: Int = 0) {
         if (mostRequestedFurnitureProducts != null && size == 0) {
             mostRequestedFurniture.postValue(Resource.Success(mostRequestedFurnitureProducts))
             return
@@ -139,10 +145,10 @@ class ShoppingViewModel(
             } else
                 mostRequestedFurniture.postValue(Resource.Error("Cannot paging"))
         }
-    }
+    }*/
 
     private var accessoriesProducts: List<Product>? = null
-    fun getAccessories(size: Int = 0) {
+    /*fun getAccessories(size: Int = 0) {
         if (accessoriesProducts != null && size == 0) {
             accessory.postValue(Resource.Success(accessoriesProducts))
             return
@@ -169,10 +175,10 @@ class ShoppingViewModel(
                 accessory.postValue(Resource.Error("Cannot page"))
             }
         }
-    }
+    }*/
 
     private var mostRequestedAccessoriesProducts: List<Product>? = null
-    fun getMostRequestedAccessories(size: Int = 0) {
+    /*fun getMostRequestedAccessories(size: Int = 0) {
         if (mostRequestedAccessoriesProducts != null && size == 0) {
             mostRequestedAccessories.postValue(Resource.Success(mostRequestedAccessoriesProducts))
             return
@@ -201,10 +207,10 @@ class ShoppingViewModel(
             } else
                 mostRequestedAccessories.postValue(Resource.Error("Cannot paging"))
         }
-    }
+    }*/
 
     private var chairsProducts: List<Product>? = null
-    fun getChairs(size: Int = 0) {
+    /*fun getChairs(size: Int = 0) {
         if (chairsProducts != null && size == 0) {
             chairs.postValue(Resource.Success(chairsProducts))
             return
@@ -231,10 +237,10 @@ class ShoppingViewModel(
             } else
                 chairs.postValue(Resource.Error("Cannot paging"))
         }
-    }
+    }*/
 
     private var mostRequestedChairsProducts: List<Product>? = null
-    fun getMostRequestedChairs(size: Int = 0) {
+    /*fun getMostRequestedChairs(size: Int = 0) {
         if (mostRequestedChairsProducts != null && size == 0) {
             mostRequestedChairs.postValue(Resource.Success(chairsProducts))
             return
@@ -260,10 +266,10 @@ class ShoppingViewModel(
             } else
                 chairs.postValue(Resource.Error("Cannot paging"))
         }
-    }
+    }*/
 
     private var tablesProducts: List<Product>? = null
-    fun getTables(size: Int = 0) {
+    /*fun getTables(size: Int = 0) {
         if (tablesProducts != null && size == 0) {
             tables.postValue(Resource.Success(tablesProducts))
             return
@@ -289,10 +295,10 @@ class ShoppingViewModel(
             } else
                 home.postValue(Resource.Error("Cannot paging"))
         }
-    }
+    }*/
 
     private var mostRequestedTablesProducts: List<Product>? = null
-    fun getMostRequestedTables(size: Int = 0) {
+    /*fun getMostRequestedTables(size: Int = 0) {
         if (mostRequestedTablesProducts != null && size == 0) {
             tables.postValue(Resource.Success(mostRequestedTablesProducts))
             return
@@ -318,10 +324,10 @@ class ShoppingViewModel(
             } else
                 mostRequestedTables.postValue(Resource.Error("Cannot paging"))
         }
-    }
+    }*/
 
 
-    fun getClothesProducts() =
+    /*fun getClothesProducts() =
         firebaseDatabase.getClothesProducts(clothesPaging).addOnCompleteListener {
             if (it.isSuccessful) {
                 val documents = it.result
@@ -335,7 +341,7 @@ class ShoppingViewModel(
             } else
                 Log.e(TAG, it.exception.toString())
 
-        }
+        }*/
 
     fun getBestDealsProduct() =
         firebaseDatabase.getBestDealsProducts(bestDealsPaging).addOnCompleteListener {
@@ -377,7 +383,7 @@ class ShoppingViewModel(
     }
 
     private var mostRequestedCupboardProducts: List<Product>? = null
-    fun getMostRequestedCupboards(size: Int = 0) {
+    /*fun getMostRequestedCupboards(size: Int = 0) {
         if (mostRequestedCupboardProducts != null && size == 0) {
             mostRequestedCupboard.postValue(Resource.Success(mostRequestedCupboardProducts))
             return
@@ -406,10 +412,10 @@ class ShoppingViewModel(
             } else
                 mostRequestedCupboard.postValue(Resource.Error("Cannot paging"))
         }
-    }
+    }*/
 
     private var dCupboardProducts: List<Product>? = null
-    fun getCupboardProduct(size: Int = 0) {
+    /*fun getCupboardProduct(size: Int = 0) {
         if (dCupboardProducts != null && size == 0) {
             cupboard.postValue(Resource.Success(dCupboardProducts))
             return
@@ -434,11 +440,9 @@ class ShoppingViewModel(
             } else
                 cupboard.postValue(Resource.Error("Cannot paging"))
         }
-    }
+    }*/
 
-    /*
-    * TODO : Move these functions to firebaseDatabase class
-     */
+//  TODO : Move these functions to firebaseDatabase class
 
     private fun shouldPaging(category: String, listSize: Int, onSuccess: (Boolean) -> Unit) {
         FirebaseFirestore.getInstance()
@@ -511,7 +515,7 @@ class ShoppingViewModel(
         }
 
 
-    fun saveAddress(address: Address) {
+    /*fun saveAddress(address: Address) {
         addAddress.postValue(Resource.Loading())
         firebaseDatabase.saveNewAddress(address)?.addOnCompleteListener {
             if (it.isSuccessful)
@@ -557,10 +561,10 @@ class ShoppingViewModel(
                 deleteAddress.postValue(Resource.Error(addressResponse.exception.toString()))
 
         }
-    }
+    }*/
 
     private val user: User? = null
-    fun getUser() {
+    /*fun getUser() {
         if (user != null) {
             profile.postValue(Resource.Success(user))
             return
