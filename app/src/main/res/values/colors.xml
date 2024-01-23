@@ -6,5 +6,10 @@
     <color name="purple">#A55DC6</color>
     <color name="dark_purple">#9C27B0</color>
     <color name="purple_blue">#6F00DF</color>
-    <color name="Yellow">#FEE3AB</color>
+    <color name="yellow">#FEE3AB</color>
+    <color name="background">#EFEFEF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="icon_tint">#CCA2DF</color>
+    <color name="hint">#666666</color>
+    <color name="text_hint">#9A9A9A</color>
 </resources>

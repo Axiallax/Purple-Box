@@ -28,6 +28,11 @@
     <string name="g_profile">profile</string>
     <string name="g_search_now">Search Now</string>
     <string name="g_settings">Settings</string>
+    <string name="g_popular">Popular</string>
+    <string name="g_new">New Creations</string>
+    <string name="g_size">Sizes</string>
+    <string name="g_please_select_size">Please select size</string>
+    <string name="g_add_to_card">Add to Card</string>
     <string name="g_edit_personal_details">Edit personal details</string>
     <string name="g_orders">Orders</string>
     <string name="g_logout">Logout</string>

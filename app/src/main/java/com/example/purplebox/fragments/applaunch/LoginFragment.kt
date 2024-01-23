@@ -1,8 +1,8 @@
 package com.example.purplebox.fragments.applaunch
 
-import android.content.Intent
 //import android.graphics.Color
 //import android.os.Build
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -11,19 +11,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.purplebox.R
 import com.example.purplebox.activities.AdminActivity
 import com.example.purplebox.activities.FirstActivity
 import com.example.purplebox.activities.ShoppingActivity
 import com.example.purplebox.databinding.FragmentLoginBinding
-import com.example.purplebox.resource.Resource
 import com.example.purplebox.viewmodel.launchapp.PurpleboxViewModel
 import com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.delay
 
 
 class LoginFragment : Fragment() {
@@ -133,28 +128,27 @@ class LoginFragment : Fragment() {
     }
 
     private fun observerLoginError() {
-        viewModel.loginError.observe(viewLifecycleOwner, Observer { error ->
+        viewModel.loginError.observe(viewLifecycleOwner) { error ->
             Log.e(TAG, error)
             Toast.makeText(activity, "Please check your information", Toast.LENGTH_LONG).show()
             btnLogin.revertAnimation()
-        })
+        }
     }
 
     private fun observerAdmin() {
-        viewModel.admin.observe(viewLifecycleOwner, Observer {
+        viewModel.admin.observe(viewLifecycleOwner) {
             if (it == true) {
                 btnLogin.revertAnimation()
                 val intent = Intent(activity, AdminActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
-            }
-            else {
+            } else {
                 btnLogin.revertAnimation()
                 val intent = Intent(activity, ShoppingActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }
-        })
+        }
     }
 
     private fun onLoginClick() {

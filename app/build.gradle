@@ -95,8 +95,8 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.7.4"
     implementation "androidx.navigation:navigation-ui-ktx:2.7.4"
 
-    //viewpager2 indicator ==
-    //Implementation 'io.github.vejei.viewpagerindicator:viewpagerindicator:1.0.0-alpha.1'
+    //viewpager2 indicator
+    implementation 'io.github.vejei.viewpagerindicator:viewpagerindicator:1.0.0-alpha.1'
 
     //lifecycle
     implementation "android.arch.lifecycle:extensions:1.1.1"

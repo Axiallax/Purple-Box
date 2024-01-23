@@ -1,10 +1,10 @@
 package com.example.purplebox.fragments.shopping
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.purplebox.R
 import com.example.purplebox.activities.ShoppingActivity
 import com.example.purplebox.databinding.FragmentHomeBinding
@@ -32,18 +32,18 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+/*    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        /*binding.frameScan.setOnClickListener {
+        binding.frameScan.setOnClickListener {
             val snackBar = requireActivity().findViewById<CoordinatorLayout>(R.id.snackBar_coordinator)
             Snackbar.make(snackBar,resources.getText(R.string.g_coming_soon), Snackbar.LENGTH_SHORT).show()
         }
         binding.fragmeMicrohpone.setOnClickListener {
             val snackBar = requireActivity().findViewById<CoordinatorLayout>(R.id.snackBar_coordinator)
             Snackbar.make(snackBar,resources.getText(R.string.g_coming_soon),Snackbar.LENGTH_SHORT).show()
-        }*/
+        }
 
         val categoriesFragments = arrayListOf<Fragment>(
 /*            HomeProductsFragment(),
