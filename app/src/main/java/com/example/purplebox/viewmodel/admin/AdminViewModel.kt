@@ -7,7 +7,6 @@ import com.example.purplebox.firebaseDatabase.FirebaseDb
 class AdminViewModel(
     private val firebaseDatabase: FirebaseDb
 ) : ViewModel() {
-    val selectedColors = mutableListOf<Int>()
     var selectedImages = mutableListOf<Uri>()
 
 

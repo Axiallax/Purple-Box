@@ -11,23 +11,24 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="46.5dp"
+            android:layout_width="@dimen/_360sdp"
+            android:layout_height="@dimen/_36sdp"
             android:importantForAccessibility="no"
             android:src="@drawable/curtains_2"
+            app:layout_constraintHeight_percent="1"
+            app:layout_constraintWidth_percent="1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
 
         <ImageView
             android:id="@+id/iv_card_1.1_register"
             android:layout_width="0dp"
             android:layout_height="@dimen/_100sdp"
-            android:layout_marginTop="0dp"
             android:importantForAccessibility="no"
             android:src="@drawable/bg_card_1"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline3"
             app:layout_constraintTop_toTopOf="@id/guideline5" />
 
@@ -36,10 +37,12 @@
             android:layout_height="0dp"
             android:importantForAccessibility="no"
             android:src="@drawable/logo_pb"
-            app:layout_constraintBottom_toTopOf="@id/iv_card_2.1_register"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toTopOf="@id/guideline5" />
+            app:layout_constraintTop_toTopOf="@id/guideline5"
+            app:layout_constraintVertical_bias="0.022" />
 
         <ImageView
             android:id="@+id/iv_card_1.2_register"
@@ -55,31 +58,20 @@
             app:layout_constraintTop_toBottomOf="@id/iv_card_1.1_register"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/iv_card_2.1_register"
-            android:layout_width="200dp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:importantForAccessibility="no"
-            android:src="@drawable/bg_card_2"
-            app:layout_constraintBottom_toBottomOf="@id/iv_card_1.1_register"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:drawablePadding="@dimen/_5sdp"
             android:fontFamily="@font/helvetica"
             android:text="@string/g_register"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_card_2.1_register"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_1.1_register"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/iv_card_2.1_register" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_username"
@@ -200,6 +192,7 @@
             android:gravity="center"
             android:singleLine="true"
             android:textStyle="bold"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
 
             app:layout_constraintHorizontal_bias="0.0"
@@ -207,6 +200,18 @@
             app:layout_constraintTop_toBottomOf="@id/tv_password"
             tools:layout_editor_absoluteY="319dp"
             android:importantForAutofill="no" />
+
+        <ImageButton
+            android:id="@+id/b_visibility_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="#0000"
+            android:src="@drawable/ic_visibility_off"
+
+            app:layout_constraintBottom_toBottomOf="@+id/ed_password_register"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@id/ed_password_register"/>
 
         <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btn_register_fragment"
@@ -216,7 +221,7 @@
             android:background="@drawable/btn_animated"
             android:fontFamily="@font/helvetica"
             android:text="@string/g_register"
-            android:textColor="@color/white"
+            android:textColor="@color/purple"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"

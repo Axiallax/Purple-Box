@@ -4,6 +4,7 @@ package com.example.purplebox.fragments.applaunch
 //import android.os.Build
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
 import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater

@@ -11,10 +11,12 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="46.5dp"
+            android:layout_width="@dimen/_360sdp"
+            android:layout_height="@dimen/_36sdp"
             android:importantForAccessibility="no"
             android:src="@drawable/curtains_2"
+            app:layout_constraintHeight_percent="1"
+            app:layout_constraintWidth_percent="1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -33,9 +35,10 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_margin="@dimen/_2sdp"
             android:importantForAccessibility="no"
             android:src="@drawable/logo_pb"
-            app:layout_constraintBottom_toTopOf="@id/iv_card_2.1"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintStart_toStartOf="@id/guideline3"
             app:layout_constraintTop_toTopOf="@id/guideline5" />
@@ -52,73 +55,79 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline3"
             app:layout_constraintTop_toBottomOf="@id/iv_card_1.1"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/iv_card_2.1"
-            android:layout_width="200dp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:importantForAccessibility="no"
-            android:src="@drawable/bg_card_2"
-            app:layout_constraintBottom_toBottomOf="@id/iv_card_1.1"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_15sdp"
             android:drawablePadding="@dimen/_5sdp"
             android:fontFamily="@font/helvetica"
             android:text="@string/g_welcome"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_card_2.1"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_1.1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/iv_card_2.1" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/ed_email_login"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_email"
             android:layout_width="0dp"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginTop="@dimen/_21sdp"
-            android:background="@drawable/txt_box_white"
-            android:fontFamily="@font/helvetica"
-            android:gravity="center"
-            android:hint="@string/g_ent_email"
-            android:singleLine="true"
-            android:textStyle="bold"
+
             app:layout_constraintEnd_toEndOf="@id/guideline2"
-
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toTopOf="@id/iv_card_1.2"
-            tools:layout_editor_absoluteY="319dp"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toTopOf="@id/iv_card_1.2">
 
-        <EditText
-            android:id="@+id/ed_password_login"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_email_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/txt_box_white"
+                android:fontFamily="@font/helvetica"
+                android:gravity="start|center_horizontal"
+                android:hint="@string/g_ent_email"
+                android:importantForAutofill="no"
+                android:singleLine="true"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_password"
             android:layout_width="0dp"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/txt_box_white"
-            android:fontFamily="@font/helvetica"
-            android:gravity="center"
-            android:hint="@string/g_ent_password"
-            android:singleLine="true"
-            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_21sdp"
+            app:endIconMode="password_toggle"
+
             app:layout_constraintEnd_toEndOf="@id/guideline2"
-
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@id/ed_email_login"
-            tools:layout_editor_absoluteY="0dp"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@id/tl_email">
 
-        <TextView
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_password_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/txt_box_white"
+                android:fontFamily="@font/helvetica"
+                android:gravity="start|center_horizontal"
+                android:hint="@string/g_ent_password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+<!--        <TextView
             android:id="@+id/tv_forgot_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -130,7 +139,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/ed_password_login"
             app:layout_constraintTop_toBottomOf="@+id/ed_password_login"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"/>-->
 
         <TextView
             android:id="@+id/tvDontHaveAccount"
@@ -140,12 +149,12 @@
             android:gravity="center"
             android:text="@string/g_don_t_have_an_account_register"
             android:textColor="@color/black"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="@dimen/_11sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/btn_login_fragment"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline1"
-            app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
+            app:layout_constraintTop_toBottomOf="@+id/tl_password" />
 
         <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btn_login_fragment"
@@ -154,7 +163,7 @@
             android:background="@drawable/btn_animated"
             android:fontFamily="@font/helvetica"
             android:text="@string/g_log_in"
-            android:textColor="@color/white"
+            android:textColor="@color/purple"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"

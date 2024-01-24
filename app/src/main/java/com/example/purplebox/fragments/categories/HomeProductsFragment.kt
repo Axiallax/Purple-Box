@@ -19,6 +19,7 @@ import com.example.purplebox.adapters.recyclerview.BestDealsRecyclerAdapter
 import com.example.purplebox.adapters.recyclerview.ProductsRecyclerAdapter
 import com.example.purplebox.databinding.FragmentHomeProductsBinding
 import com.example.purplebox.firebaseDatabase.FirebaseDb
+import com.example.purplebox.model.CartProduct
 //import com.example.purplebox.model.CartProduct
 import com.example.purplebox.resource.Resource
 import com.example.purplebox.util.Constants.Companion.PRODUCT_FLAG
@@ -54,8 +55,8 @@ class HomeProductsFragment : Fragment() {
 
         binding.tvBestDeals.visibility = View.GONE
 
-        setupHeaderRecyclerView()
-        observeHeaderProducts()
+//        setupHeaderRecyclerView()
+//        observeHeaderProducts()
 
         setupBestDealsRecyclerView()
         observeBestDeals()
@@ -63,14 +64,14 @@ class HomeProductsFragment : Fragment() {
         setupAllProductsRecyclerView()
         observeAllProducts()
 
-        headerPaging()
-        bestDealsPaging()
+//        headerPaging()
+//        bestDealsPaging()
         productsPaging()
 
-        observeEmptyHeader()
+//        observeEmptyHeader()
         observeEmptyBestDeals()
 
-        onHeaderProductClick()
+//        onHeaderProductClick()
         onBestDealsProductClick()
 
         observeAddHeaderProductsToCart()
@@ -81,7 +82,7 @@ class HomeProductsFragment : Fragment() {
             bundle.putParcelable("product", product)
             bundle.putString("flag", PRODUCT_FLAG)
             findNavController().navigate(
-                R.id.action_homeFragment_to_productPreviewFragment2,
+                R.id.action_homeFragment_to_productPreviewFragment,
                 bundle
             )
         }
@@ -126,19 +127,19 @@ class HomeProductsFragment : Fragment() {
             val bundle = Bundle()
             bundle.putParcelable("product", product)
             findNavController().navigate(
-                R.id.action_homeFragment_to_productPreviewFragment2,
+                R.id.action_homeFragment_to_productPreviewFragment,
                 bundle
             )
 
         }
     }
 
-    private fun onHeaderProductClick() {
+    /*private fun onHeaderProductClick() {
         headerAdapter.onItemClick = { product ->
             val bundle = Bundle()
             bundle.putParcelable("product", product)
             findNavController().navigate(
-                R.id.action_homeFragment_to_productPreviewFragment2,
+                R.id.action_homeFragment_to_productPreviewFragment,
                 bundle
             )
         }
@@ -158,7 +159,7 @@ class HomeProductsFragment : Fragment() {
             )
             viewModel.addProductToCart(cartProduct)
         }
-    }
+    }*/
 
     private fun observeEmptyBestDeals() {
         viewModel.emptyBestDeals.observe(viewLifecycleOwner, Observer {
@@ -171,7 +172,7 @@ class HomeProductsFragment : Fragment() {
         })
     }
 
-    private fun observeEmptyHeader() {
+    /*private fun observeEmptyHeader() {
         viewModel.emptyClothes.observe(viewLifecycleOwner, Observer {
             if (it == true) {
                 binding.apply {
@@ -179,10 +180,10 @@ class HomeProductsFragment : Fragment() {
                 }
             }
         })
-    }
+    }*/
 
 
-    private fun bestDealsPaging() {
+    /*private fun bestDealsPaging() {
         binding.rvBestDeals.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
@@ -191,9 +192,9 @@ class HomeProductsFragment : Fragment() {
                 }
             }
         })
-    }
+    }*/
 
-    private fun headerPaging() {
+    /*private fun headerPaging() {
         binding.rvAds.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
@@ -202,12 +203,12 @@ class HomeProductsFragment : Fragment() {
                 }
             }
         })
-    }
+    }*/
 
     private fun productsPaging() {
         binding.scrollChair.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
 
-            if (v!!.getChildAt(0).bottom <= (v.height + scrollY)) {
+            if (v.getChildAt(0).bottom <= (v.height + scrollY)) {
                 viewModel.getHomeProduct(productsAdapter.differ.currentList.size)
             }
         })
@@ -266,11 +267,11 @@ class HomeProductsFragment : Fragment() {
     }
 
 
-    private fun observeHeaderProducts() {
+/*    private fun observeHeaderProducts() {
         viewModel.clothes.observe(viewLifecycleOwner, Observer { clothesList ->
             headerAdapter.differ.submitList(clothesList.toList())
         })
-    }
+    }*/
 
     private fun observeBestDeals() {
         viewModel.bestDeals.observe(viewLifecycleOwner, Observer { bestDealsList ->
@@ -279,10 +280,10 @@ class HomeProductsFragment : Fragment() {
         })
     }
 
-    private fun setupHeaderRecyclerView() {
+    /*private fun setupHeaderRecyclerView() {
         binding.rvAds.apply {
             adapter = headerAdapter
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         }
-    }
+    }*/
 }

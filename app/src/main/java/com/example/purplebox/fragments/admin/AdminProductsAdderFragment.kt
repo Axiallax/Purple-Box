@@ -22,9 +22,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import com.skydoves.colorpickerview.ColorEnvelope
-import com.skydoves.colorpickerview.ColorPickerDialog
-import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -38,59 +35,10 @@ class AdminProductsAdderFragment : Fragment() {
     private val firestore = Firebase.firestore
     private val storage = Firebase.storage.reference
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         viewModel = (activity as AdminActivity).viewModel
-
-        binding.buttonColorPicker.setOnClickListener {
-            ColorPickerDialog
-                .Builder(activity)
-                .setTitle("Product color")
-                .setPositiveButton("Select", object : ColorEnvelopeListener {
-
-                    override fun onColorSelected(envelope: ColorEnvelope?, fromUser: Boolean) {
-                        envelope?.let {
-                            viewModel.selectedColors.add(it.color)
-                            updateColors()
-                        }
-                    }
-
-                }).setNegativeButton("Cancel") { colorPicker, _ ->
-                    colorPicker.dismiss()
-                }.show()
-        }
-
-
-        val selectImagesActivityResult =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-                if (result.resultCode == Activity.RESULT_OK) {
-                    val intent = result.data
-
-                    //Multiple images selected
-                    if (intent?.clipData != null) {
-                        val count = intent.clipData?.itemCount ?: 0
-                        (0 until count).forEach { it ->
-                            val imagesUri = intent.clipData?.getItemAt(it)?.uri
-                            imagesUri?.let { viewModel.selectedImages.add(it) }
-                        }
-
-                        //One images was selected
-                    } else {
-                        val imageUri = intent?.data
-                        imageUri?.let { viewModel.selectedImages.add(it) }
-                    }
-                    updateImages()
-                }
-            }
-        //6
-        binding.buttonImagesPicker.setOnClickListener {
-            val intent = Intent(Intent.ACTION_GET_CONTENT)
-            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-            intent.type = "image/*"
-            selectImagesActivityResult.launch(intent)
-        }
     }
 
 
@@ -99,7 +47,6 @@ class AdminProductsAdderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAdminProductsAdderBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
@@ -109,6 +56,7 @@ class AdminProductsAdderFragment : Fragment() {
 
         onSaveClick()
         onHomeClick()
+        onImageClick()
     }
 
 
@@ -177,7 +125,6 @@ class AdminProductsAdderFragment : Fragment() {
                 price.toFloat(),
                 if (offerPercentage.isEmpty()) null else offerPercentage.toFloat(),
                 productDescription.ifEmpty { null },
-                viewModel.selectedColors,
                 sizes,
                 images
             )
@@ -224,13 +171,36 @@ class AdminProductsAdderFragment : Fragment() {
         return sizes.split(",").map { it.trim() }
     }
 
-    //5
-    private fun updateColors() {
-        var colors = ""
-        viewModel.selectedColors.forEach {
-            colors = "$colors ${Integer.toHexString(it)}, "
+
+    private fun onImageClick() {
+        val selectImagesActivityResult =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val intent = result.data
+
+                    //Multiple images selected
+                    if (intent?.clipData != null) {
+                        val count = intent.clipData?.itemCount ?: 0
+                        (0 until count).forEach {
+                            val imagesUri = intent.clipData?.getItemAt(it)?.uri
+                            imagesUri?.let { viewModel.selectedImages.add(it) }
+                        }
+
+                        //One images was selected
+                    } else {
+                        val imageUri = intent?.data
+                        imageUri?.let { viewModel.selectedImages.add(it) }
+                    }
+                    updateImages()
+                }
+            }
+        //6
+        binding.buttonImagesPicker.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+            intent.type = "image/*"
+            selectImagesActivityResult.launch(intent)
         }
-        binding.tvSelectedColors.text = colors
     }
 
 
